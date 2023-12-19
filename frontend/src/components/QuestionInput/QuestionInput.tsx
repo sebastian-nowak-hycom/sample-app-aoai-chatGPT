@@ -16,6 +16,8 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
     const [question, setQuestion] = useState<string>("");
 
     const sendQuestion = () => {
+        console.log('FUNCTION CALLING HERE!!!');
+
         if (disabled || !question.trim()) {
             return;
         }

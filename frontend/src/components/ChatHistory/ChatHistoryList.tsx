@@ -12,7 +12,7 @@ export interface GroupedChatHistory {
 }
 
 const groupByMonth = (entries: Conversation[]) => {
-    const groups: GroupedChatHistory[] = [{ month: "Recent", entries: [] }];
+    const groups: GroupedChatHistory[] = [{ month: "Ostatnie", entries: [] }];
     const currentDate = new Date();
   
     entries.forEach((entry) => {
