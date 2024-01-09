@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import styles from "./Layout.module.css";
-import Azure from "../../assets/logo--dremex.svg";
+import Azure from "../../assets/logo.png";
 import { CopyRegular, ShareRegular } from "@fluentui/react-icons";
 import { CommandBarButton, Dialog, Stack, TextField, ICommandBarStyles, IButtonStyles, DefaultButton  } from "@fluentui/react";
 import { useContext, useEffect, useState } from "react";
@@ -13,7 +13,7 @@ const shareButtonStyles: ICommandBarStyles & IButtonStyles = {
       width: 86,
       height: 32,
       borderRadius: 0,
-      background: '#293a58',
+      background: '#504e4d',
     //   position: 'absolute',
     //   right: 20,
       padding: '5px 12px',
@@ -23,7 +23,7 @@ const shareButtonStyles: ICommandBarStyles & IButtonStyles = {
       color: '#FFFFFF',
     },
     rootHovered: {
-      background: '#293a58',
+      background: '#504e4d',
     },
     label: {
       fontWeight: 600,
@@ -79,12 +79,12 @@ const Layout = () => {
                         {/*    aria-hidden="true"*/}
                         {/*/>*/}
                         <Link to="/" className={styles.headerTitleContainer}>
-                            <h1 className={styles.headerTitle}>Dremex AI</h1>
+                            <h1 className={styles.headerTitle}>Galmet AI</h1>
                         </Link>
                     </Stack>
                     <Stack horizontal tokens={{ childrenGap: 4 }}>
-                            {(appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured) && 
-                                <HistoryButton onClick={handleHistoryClick} text={appStateContext?.state?.isChatHistoryOpen ? "Hide chat history" : "Show chat history"}/>    
+                            {(appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured) &&
+                                <HistoryButton onClick={handleHistoryClick} text={appStateContext?.state?.isChatHistoryOpen ? "Ukryj historię chatu" : "pokaż historię chatu"}/>
                             }
                             <ShareButton onClick={handleShareClick} />
                     </Stack>
@@ -92,11 +92,11 @@ const Layout = () => {
                 </Stack>
             </header>
             <Outlet />
-            <Dialog 
+            <Dialog
                 onDismiss={handleSharePanelDismiss}
                 hidden={!isSharePanelOpen}
                 styles={{
-                    
+
                     main: [{
                         selectors: {
                           ['@media (min-width: 480px)']: {
@@ -117,11 +117,11 @@ const Layout = () => {
             >
                 <Stack horizontal verticalAlign="center" style={{gap: "8px"}}>
                     <TextField className={styles.urlTextBox} defaultValue={window.location.href} readOnly/>
-                    <div 
-                        className={styles.copyButtonContainer} 
-                        role="button" 
-                        tabIndex={0} 
-                        aria-label="Copy" 
+                    <div
+                        className={styles.copyButtonContainer}
+                        role="button"
+                        tabIndex={0}
+                        aria-label="Copy"
                         onClick={handleCopyClick}
                         onKeyDown={e => e.key === "Enter" || e.key === " " ? handleCopyClick() : null}
                     >

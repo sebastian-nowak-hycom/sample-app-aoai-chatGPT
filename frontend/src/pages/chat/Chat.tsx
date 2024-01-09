@@ -9,7 +9,7 @@ import uuid from 'react-uuid';
 import { isEmpty } from "lodash-es";
 
 import styles from "./Chat.module.css";
-import Azure from "../../assets/logo--dremex.svg";
+import Azure from "../../assets/logo.png";
 
 import {
     ChatMessage,
@@ -656,7 +656,7 @@ const Chat = () => {
                                         },
                                         root: {
                                             color: '#FFFFFF',
-                                            background: "#293a58"
+                                            background: "#504e4d"
                                         },
                                         rootDisabled: {
                                             background: "#BDBDBD"
@@ -676,7 +676,7 @@ const Chat = () => {
                                         },
                                         root: {
                                             color: '#FFFFFF',
-                                            background: disabledButton() ? "#BDBDBD" : "#293a58",
+                                            background: disabledButton() ? "#BDBDBD" : "#504e4d",
                                             cursor: disabledButton() ? "" : "pointer"
                                         },
                                     }}
